@@ -30,7 +30,8 @@ public class MainActivity extends AppCompatActivity {
     }
 
     public void download(View view) {
-        
+        DownloadAsyncTask downloadAsyncTask = new DownloadAsyncTask();
+        downloadAsyncTask.execute(IMG_URL);
     }
 
     private class DownloadAsyncTask extends AsyncTask<String, Void, Bitmap>{
