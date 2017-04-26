@@ -30,6 +30,7 @@ public class MainActivity extends AppCompatActivity {
     }
 
     public void download(View view) {
+        
     }
 
     private class DownloadAsyncTask extends AsyncTask<String, Void, Bitmap>{
@@ -55,6 +56,16 @@ public class MainActivity extends AppCompatActivity {
             }
 
             return null;
+        }
+
+        @Override
+        protected void onPostExecute(Bitmap bitmap) {
+            super.onPostExecute(bitmap);
+
+            if(bitmap != null){
+                imgBaixada.setImageBitmap(bitmap);
+            }
+            mProgressDialog.dismiss();
         }
     }
 }
