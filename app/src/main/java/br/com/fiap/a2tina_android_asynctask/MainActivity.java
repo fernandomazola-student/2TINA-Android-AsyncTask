@@ -2,11 +2,16 @@ package br.com.fiap.a2tina_android_asynctask;
 
 import android.app.ProgressDialog;
 import android.graphics.Bitmap;
+import android.graphics.BitmapFactory;
 import android.os.AsyncTask;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.ImageView;
+
+import java.io.IOException;
+import java.io.InputStream;
+import java.net.URL;
 
 public class MainActivity extends AppCompatActivity {
 
@@ -37,6 +42,18 @@ public class MainActivity extends AppCompatActivity {
 
         @Override
         protected Bitmap doInBackground(String... params) {
+            try {
+                InputStream inputStream;
+                Bitmap imagem;
+                URL endereco = new URL( params[0] );
+                inputStream = endereco.openStream();
+                imagem = BitmapFactory.decodeStream(inputStream);
+                inputStream.close();
+                return imagem;
+            }catch (IOException e) {
+                e.printStackTrace();
+            }
+
             return null;
         }
     }
