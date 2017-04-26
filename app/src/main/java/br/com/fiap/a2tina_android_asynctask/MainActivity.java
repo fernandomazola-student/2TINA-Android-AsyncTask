@@ -1,6 +1,7 @@
 package br.com.fiap.a2tina_android_asynctask;
 
 import android.app.ProgressDialog;
+import android.os.AsyncTask;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.View;
@@ -23,5 +24,9 @@ public class MainActivity extends AppCompatActivity {
     }
 
     public void download(View view) {
+    }
+
+    private class DownloadAsyncTask extends AsyncTask<>{
+        
     }
 }
