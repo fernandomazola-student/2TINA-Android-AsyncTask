@@ -1,6 +1,7 @@
 package br.com.fiap.a2tina_android_asynctask;
 
 import android.app.ProgressDialog;
+import android.graphics.Bitmap;
 import android.os.AsyncTask;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
@@ -26,7 +27,17 @@ public class MainActivity extends AppCompatActivity {
     public void download(View view) {
     }
 
-    private class DownloadAsyncTask extends AsyncTask<>{
-        
+    private class DownloadAsyncTask extends AsyncTask<String, Void, Bitmap>{
+
+        @Override
+        protected void onPreExecute() {
+            super.onPreExecute();
+            mProgressDialog = ProgressDialog.show(MainActivity.this, "Aguarde", "Fazendo download da imagem");
+        }
+
+        @Override
+        protected Bitmap doInBackground(String... params) {
+            return null;
+        }
     }
 }
