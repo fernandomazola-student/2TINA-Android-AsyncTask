@@ -3,6 +3,7 @@ package br.com.fiap.a2tina_android_asynctask;
 import android.app.ProgressDialog;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.view.View;
 import android.widget.ImageView;
 
 public class MainActivity extends AppCompatActivity {
@@ -19,5 +20,8 @@ public class MainActivity extends AppCompatActivity {
 
         imgBaixada = (ImageView) findViewById(R.id.imgBaixada);
 
+    }
+
+    public void download(View view) {
     }
 }
